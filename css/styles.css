@@ -13,6 +13,13 @@ body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
+  font-family: 'Lato', sans-serif;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: gray;
 }
 
 #header {
@@ -31,7 +38,7 @@ body {
 	min-height: 1000px;
 	background-color: #f2f2f2;
   box-shadow: inset 0 0 10px gray;
-  padding: 10px;
+  padding: 20px 0;
 }
 
 #footer {
@@ -43,4 +50,104 @@ body {
   color: white;
   font-family: 'Archivo Narrow';
   font-weight: 400;
+}
+
+#subtitle {
+  font-size: 32px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.alert {
+  margin: 10px auto;
+  padding: 5px;
+  width: 500px;
+  min-width: 60%;
+  max-width: 80%;
+  background: red;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 1px gray;
+}
+
+.panel {
+  margin: 20px auto;
+  padding: 15px;
+  width: 500px;
+  min-width: 60%;
+  max-width: 80%;
+  background: white;
+  box-shadow: 0 0 1px gray;
+  overflow: hidden;
+}
+
+.topic_name {
+  font-size: 24px;
+  margin: 0 10px 5px;
+  word-wrap: break-word;
+}
+
+.topic_name:hover {
+  text-decoration: underline;
+}
+
+.topic_desc {
+  font-size: 16px;
+  margin: 10px 20px 0;
+  word-wrap: break-word;
+}
+
+#topic_name_form {
+  margin: 5px 0 15px;
+  width: 200px;
+  max-width: 80%;
+  height: 20px;
+}
+
+#topic_desc_form {
+  margin: 5px 0 15px;
+  width: 400px;
+  max-width: 80%;
+  height: 40px;
+  padding: 5px;
+}
+
+.content {
+  width: 90%;
+  float: left;
+}
+
+.arrow {
+  margin-left: 90%;
+  font-size: 54px;
+  transform: scale(.5, 1);
+  text-align: right;
+  color: gray;
+}
+
+.arrow:hover {
+  color: black;
+}
+
+.post_title {
+  font-size: 18px;
+  margin-bottom: 5px;
+  word-wrap: break-word;
+}
+
+.comment {
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+.dt {
+  text-align: right;
+  font-size: 10px;
+}
+
+#submit {
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
 }

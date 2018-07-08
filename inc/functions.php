@@ -36,10 +36,10 @@ function displayTopics() {
 	}
 
 	while ($row = $results->fetch(PDO::FETCH_ASSOC)) {
+		echo '<div class="panel">';
 		echo '<a href="posts.php?topic_id=' . $row['topic_id'] . '&topic_name=' . $row['topic_name'] . '">';
-		echo $row['topic_name'] . '<br>';
-		echo $row['topic_desc'] . '<br>';
-		echo '</a><hr>';
+		echo '<div class="topic_name">' . $row['topic_name'] . '</div></a><hr>';
+		echo '<div class="topic_desc">' . $row['topic_desc'] . '</div></div>';
 	}
 }
 
@@ -83,10 +83,11 @@ function displayPosts($topic) {
 	}
 
 	while ($row = $results->fetch(PDO::FETCH_ASSOC)) {
-		echo '<a href="comments.php?post_id=' . $row['post_id'] . '&post_title=' . $row['post_title'] . '">';
-		echo $row['post_title'] . '<br>';
-		echo $row['posted_on'] . '<br>';
-		echo '</a><hr>';
+		echo '<div class="panel">';
+		echo '<div class="content">';
+		echo '<div class="post_title">' . $row['post_title'] . '</div><hr>';
+		echo '<div class="dt">' . $row['posted_on'] . '</div></div>';
+		echo '<a href="comments.php?post_id=' . $row['post_id'] . '&post_title=' . $row['post_title'] . '"><div class="arrow">></div></a></div>';
 	}
 }
 
@@ -130,8 +131,7 @@ function displayComments($post) {
 	}
 
 	while ($row = $results->fetch(PDO::FETCH_ASSOC)) {
-		echo $row['comment_body'] . '<br>';
-		echo $row['commented_on'] . '<br>';
-		echo '<hr>';
+		echo '<div class="panel comment">' . $row['comment_body'];
+		echo '<div class="dt">' . $row['commented_on'] . '</div></div>';
 	}
 }

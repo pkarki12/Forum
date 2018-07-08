@@ -10,12 +10,12 @@ if (empty($post_id) || empty($post_title)) {
 include 'inc/header.php';
 require 'inc/functions.php';
 
-echo $post_title . '<br>';
+echo '<div class="panel"><strong>Post: </strong><br>' . $post_title . '</div>';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$comment_body = trim(filter_input(INPUT_POST, 'comment_body', FILTER_SANITIZE_STRING));
 	if (empty($comment_body)) {
-		echo 'Please fill out all of the fields.<br>';
+		echo '<div class="alert">Please fill out all of the fields.</div>';
 	} else {
 		createComment($post_id, $comment_body); // In functions.php
 	}
@@ -25,9 +25,9 @@ displayComments($post_id);
 
 ?>
 
-<form method="post" action="comments.php?post_id=<?php echo $post_id; ?>&post_title=<?php echo $post_title; ?>">
+<form method="post" class="panel" action="comments.php?post_id=<?php echo $post_id; ?>&post_title=<?php echo $post_title; ?>">
   Leave a comment:<br>
-  <textarea name="comment_body" id="comment_body"></textarea><br>
+  <textarea name="comment_body" id="topic_desc_form"></textarea><br>
   <input type="submit" name="submit" id="submit" value="Post comment">
 </form>
 
